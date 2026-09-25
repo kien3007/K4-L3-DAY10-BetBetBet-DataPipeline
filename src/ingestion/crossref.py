@@ -30,6 +30,10 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
     3. Chuan hoa text va bo record khong hop le.
     4. Tra ve list `PaperRecord`.
     """
+    for item in payload["message"]["items"]:
+        title = item["title"]
+        abstract = item["abstract"]
+
     raise NotImplementedError("Student task: implement Crossref payload parsing.")
 
 
