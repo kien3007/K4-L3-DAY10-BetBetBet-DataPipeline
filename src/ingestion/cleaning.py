@@ -8,18 +8,43 @@ from ingestion.crossref import PaperRecord
 
 
 def build_clean_dataframe(records: list[PaperRecord], run_date: datetime) -> pd.DataFrame:
-    """TODO(student): clean raw records thanh dataframe san sang de embed.
-
-    Pseudo-code:
-    1. Normalize title, summary, authors, categories.
-    2. Parse published/updated date.
-    3. Tinh age_days.
-    4. Tao cot helper:
-       - authors_joined
-       - categories_joined
-       - summary_chars
-       - text_for_embedding
-    5. Drop duplicates va filter row xau.
-    6. Sort dataframe va return.
-    """
-    raise NotImplementedError("Student task: implement cleaning pipeline.")
+    data = []
+    for r in records:
+        d = r.__dict__.copy()
+        data.append(d)
+    
+    df = pd.DataFrame(data)
+    if df.empty:
+        return df
+        
+    df = df.drop_duplicates(subset=["paper_id"]).copy()
+    
+    # Normalize title and summary
+    df["title"] = df["title"].fillna("").str.strip()
+    df["summary"] = df["summary"].fillna("").str.strip()
+    
+    df["published_dt"] = pd.to_datetime(df["published"], errors="coerce").dt.tz_localize(None)
+    run_date_tz_naive = pd.to_datetime(run_date).tz_localize(None)
+    df["age_days"] = (run_date_tz_naive - df["published_dt"]).dt.days
+    
+    df["authors_joined"] = df["authors"].apply(lambda x: ", ".join(x) if isinstance(x, list) else "")
+    df["categories_joined"] = df["categories"].apply(lambda x: ", ".join(x) if isinstance(x, list) else "")
+    df["summary_chars"] = df["summary"].apply(len)
+    
+    df["text_for_embedding"] = (
+        "Title: " + df["title"] + "\n"
+        "Authors: " + df["authors_joined"] + "\n"
+        "Published: " + df["published"].astype(str) + "\n"
+        "Categories: " + df["categories_joined"] + "\n"
+        "Summary: " + df["summary"]
+    )
+    
+    # Filter row xau: summary > 30 chars
+    df = df[df["summary_chars"] >= 30]
+    
+    df = df.sort_values("published", ascending=False).reset_index(drop=True)
+    
+    # Drop published_dt helper
+    df = df.drop(columns=["published_dt", "summary_chars"])
+    
+    return df

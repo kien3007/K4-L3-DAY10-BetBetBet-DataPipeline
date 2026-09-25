@@ -1,0 +1,92 @@
+[
+  {
+    "id": "eval_000",
+    "question_type": "summary",
+    "question": "What is the summary of the paper 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection'?",
+    "ground_truth": "Large Language Models (LLMs) have been rapidly evolving lately, resulting in the need for strong, ex...",
+    "ground_truth_doc_ids": [
+      "10.3390/knowledge6030022"
+    ]
+  },
+  {
+    "id": "eval_001",
+    "question_type": "authors",
+    "question": "Who are the authors of the paper 'The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges'?",
+    "ground_truth": "Ben J. Weber, Clara M. Hofmann, Amara N. Okoye",
+    "ground_truth_doc_ids": [
+      "10.63646/kpqm1958"
+    ]
+  },
+  {
+    "id": "eval_002",
+    "question_type": "date",
+    "question": "When was the paper 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation' published?",
+    "ground_truth": "2026-09-15T00:00:00Z",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10489777/v1"
+    ]
+  },
+  {
+    "id": "eval_003",
+    "question_type": "categories",
+    "question": "What categories does the paper 'Retrieval-Augmented Generation (RAG), Generative AI, and\nAgentic AI Governance: An Integrated Enterprise Governance\nPrioritization Architecture' belong to?",
+    "ground_truth": "",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10012178/v1"
+    ]
+  },
+  {
+    "id": "eval_004",
+    "question_type": "summary",
+    "question": "What is the summary of the paper 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study'?",
+    "ground_truth": "Abstract\n                  \n                    Diagnosing jawbone lesions in oral and maxillofacial...",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ]
+  },
+  {
+    "id": "eval_005",
+    "question_type": "authors",
+    "question": "Who are the authors of the paper 'A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning'?",
+    "ground_truth": "Vanlalropuia Ralte, Abhisake Sinha -",
+    "ground_truth_doc_ids": [
+      "10.36948/ijfmr.2026.v08i04.85777"
+    ]
+  },
+  {
+    "id": "eval_006",
+    "question_type": "date",
+    "question": "When was the paper 'Does retrieval-augmented generation impact medical students’ perceptions of large language models? (Preprint)' published?",
+    "ground_truth": "2026-07-03T00:00:00Z",
+    "ground_truth_doc_ids": [
+      "10.2196/preprints.106157"
+    ]
+  },
+  {
+    "id": "eval_007",
+    "question_type": "categories",
+    "question": "What categories does the paper 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review' belong to?",
+    "ground_truth": "",
+    "ground_truth_doc_ids": [
+      "10.70267/aitia.2026482489"
+    ]
+  },
+  {
+    "id": "eval_008",
+    "question_type": "summary",
+    "question": "What is the summary of the paper '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'?",
+    "ground_truth": "Abstract\n                  \n                    Introduction\n                    While Large Languag...",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ]
+  },
+  {
+    "id": "eval_009",
+    "question_type": "authors",
+    "question": "Who are the authors of the paper 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large  Language Model'?",
+    "ground_truth": "Muhamad Komarudin, Chelly Sabrina, Yessy Mulyani, Puput Budi Wintoro",
+    "ground_truth_doc_ids": [
+      "10.28932/jutisi.v12i2.13099"
+    ]
+  }
+]
