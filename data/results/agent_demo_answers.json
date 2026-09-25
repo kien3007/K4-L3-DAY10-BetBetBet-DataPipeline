@@ -1,0 +1,19 @@
+[
+  {
+    "question": "What is the summary of the paper 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation'?",
+    "answer": "Abstract Increasingly, digital forensic investigations require a quick, reliable, and privacy-preserving assessment of case materials before formal forensic examination.",
+    "ground_truth": "Abstract Increasingly, digital forensic investigations require a quick, reliable, and privacy-preserving assessment of case materials before formal forensic examination.",
+    "retrieved_doc_ids": [
+      "10.21203/rs.3.rs-10489777/v1",
+      "10.21203/rs.3.rs-10349437/v1",
+      "10.3390/buildings16132637",
+      "10.28932/jutisi.v12i2.13099"
+    ],
+    "retrieved_titles": [
+      "DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation",
+      "Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems",
+      "An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models",
+      "Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model"
+    ]
+  }
+]

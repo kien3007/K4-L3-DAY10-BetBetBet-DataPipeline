@@ -26,19 +26,22 @@ class LocalEmbeddingIndex:
         self,
         settings: Settings,
         collection_name: str,
-        documents: list[dict[str, Any]],
-        persist_path: Path,
+        documents: list[dict[str, Any]] | None = None,
+        persist_path: Path | None = None,
     ):
         self.settings = settings
         self.collection_name = collection_name
-        self.documents = documents
-        self.persist_path = persist_path
+        self.documents = documents or []
+        self.persist_path = persist_path or settings.paths.chroma_dir
         self.embedding_backend = "chroma"
         self.embedding_model = MiniLMEmbeddings(settings.embedding_model)
-        self.client = chromadb.PersistentClient(path=str(persist_path))
-        self.collection = self.client.get_collection(name=collection_name)
-        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in documents}
-        self.documents_by_title = {document["title"].lower(): document for document in documents}
+        self.client = chromadb.PersistentClient(path=str(self.persist_path))
+        try:
+            self.collection = self.client.get_collection(name=collection_name)
+        except Exception:
+            self.collection = None
+        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in self.documents if "paper_id" in document}
+        self.documents_by_title = {document["title"].lower(): document for document in self.documents if "title" in document}
 
     @staticmethod
     def _build_documents(df: pd.DataFrame) -> list[dict[str, Any]]:
@@ -138,7 +141,58 @@ class LocalEmbeddingIndex:
             persist_path=Path(payload["persist_path"]),
         )
 
+    def build_from_clean(self, clean_path: Path | None = None) -> "LocalEmbeddingIndex":
+        """Nạp dữ liệu sạch từ data/clean/, tạo vector embeddings và index vào ChromaDB."""
+        target_path = clean_path or self.settings.paths.clean_json
+        if target_path.exists():
+            df = pd.read_json(target_path)
+        elif self.settings.paths.clean_csv.exists():
+            df = pd.read_csv(self.settings.paths.clean_csv)
+        else:
+            from ingestion.crossref import load_raw_records
+            from ingestion.cleaning import build_clean_dataframe
+            from core.utils import now_utc
+            df = build_clean_dataframe(load_raw_records(self.settings.paths.raw_records_json), now_utc())
+
+        self.documents = self._build_documents(df)
+        self.persist_path.mkdir(parents=True, exist_ok=True)
+        try:
+            self.client.delete_collection(name=self.collection_name)
+        except Exception:
+            pass
+        self.collection = self.client.create_collection(
+            name=self.collection_name,
+            configuration={"hnsw": {"space": "cosine"}},
+        )
+        embeddings = self.embedding_model.embed_documents([doc["content"] for doc in self.documents])
+        self.collection.add(
+            ids=[doc["record_id"] for doc in self.documents],
+            embeddings=embeddings,
+            documents=[doc["content"] for doc in self.documents],
+            metadatas=[doc["metadata"] for doc in self.documents],
+        )
+        self.documents_by_paper_id = {doc["paper_id"].lower(): doc for doc in self.documents}
+        self.documents_by_title = {doc["title"].lower(): doc for doc in self.documents}
+
+        write_json(
+            self.settings.paths.embeddings_json,
+            {
+                "backend": "chroma",
+                "embedding_model": self.settings.embedding_model,
+                "persist_path": str(self.persist_path),
+                "collection_name": self.collection_name,
+                "documents": self.documents,
+            },
+        )
+        return self
+
+    def semantic_search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        """Truy vấn tìm kiếm ngữ nghĩa theo vector tương đồng."""
+        return self.search(query, top_k=top_k)
+
     def search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        if self.collection is None:
+            self.collection = self.client.get_collection(name=self.collection_name)
         query_embedding = self.embedding_model.embed_query(query)
         results = self.collection.query(
             query_embeddings=[query_embedding],
