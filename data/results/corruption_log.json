@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-09-25 09:43:27 UTC",
+  "total_records_before": 24,
+  "total_records_after": 24,
+  "scenarios": [
+    {
+      "name": "drop_latest_records",
+      "description": "Drop 3 newest records by published date to simulate missing fresh data",
+      "affected_count": 3,
+      "dropped_paper_ids": [
+        "10.21203/rs.3.rs-10489777/v1",
+        "10.70267/aitia.2026482489",
+        "10.21203/rs.3.rs-10349437/v1"
+      ]
+    },
+    {
+      "name": "blank_summary",
+      "description": "Blank out summary on 2 records to simulate scraped null text (violates GX min length)",
+      "affected_count": 2,
+      "affected_paper_ids": [
+        "10.54254/2755-2721/2026.36624",
+        "10.36887/2415-8453-2026-3-2"
+      ]
+    },
+    {
+      "name": "inject_text_noise",
+      "description": "Inject corrupted noise string into summary to degrade semantic retrieval",
+      "affected_count": 2,
+      "noise_pattern": "### [CORRUPTED_GARBAGE_NOISE_0xDEADBEEF] #%^&* ERROR 404 DATA GARBAGE ### ",
+      "affected_paper_ids": [
+        "10.20944/preprints202608.1849.v1",
+        "10.28932/jutisi.v12i2.13099"
+      ]
+    },
+    {
+      "name": "truncate_title",
+      "description": "Truncate title to under 8 characters ('Draft')",
+      "affected_count": 2,
+      "affected_paper_ids": [
+        "10.21203/rs.3.rs-10423755/v1",
+        "10.3390/knowledge6030022"
+      ]
+    },
+    {
+      "name": "stale_date",
+      "description": "Shift published date to 2021-01-15 (> 180 days) violating Freshness SLA threshold (> 25% stale)",
+      "affected_count": 8,
+      "stale_date": "2021-01-15",
+      "stale_age_days": 2079,
+      "affected_paper_ids": [
+        "10.36948/ijfmr.2026.v08i04.85777",
+        "10.2118/234689-pa",
+        "10.1007/s10278-026-02086-9",
+        "10.21203/rs.3.rs-10178277/v1",
+        "10.2196/preprints.106157",
+        "10.3390/buildings16132637",
+        "10.21079/11681/50309",
+        "10.63646/kpqm1958"
+      ]
+    },
+    {
+      "name": "duplicate_rows",
+      "description": "Duplicate 3 rows to violate Great Expectations uniqueness constraint on paper_id",
+      "affected_count": 3,
+      "duplicated_paper_ids": [
+        "10.54254/2755-2721/2026.36624",
+        "10.36887/2415-8453-2026-3-2",
+        "10.20944/preprints202608.1849.v1"
+      ]
+    }
+  ]
+}

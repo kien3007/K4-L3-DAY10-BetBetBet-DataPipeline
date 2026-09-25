@@ -4,7 +4,7 @@
   "message-version": "1.0.0",
   "message": {
     "facets": {},
-    "total-results": 103661,
+    "total-results": 103705,
     "items": [
       {
         "indexed": {
@@ -120,7 +120,7 @@
           "date-time": "2026-06-17T08:00:36Z",
           "timestamp": 1781683236000
         },
-        "score": 39.88185,
+        "score": 39.882442,
         "resource": {
           "primary": {
             "URL": "https://ieiap.ru/journal"
@@ -258,7 +258,7 @@
           "date-time": "2026-09-15T08:27:58Z",
           "timestamp": 1789460878000
         },
-        "score": 37.86309,
+        "score": 37.863087,
         "resource": {
           "primary": {
             "URL": "https://ace.ewapub.com/article/view/36624"
@@ -425,7 +425,7 @@
           "date-time": "2026-09-13T10:04:32Z",
           "timestamp": 1789293872000
         },
-        "score": 37.846767,
+        "score": 37.847237,
         "resource": {
           "primary": {
             "URL": "https://journals.zeuspress.org/index.php/conference/article/view/1352"
@@ -628,7 +628,7 @@
           "date-time": "2026-04-07T00:32:52Z",
           "timestamp": 1775521972000
         },
-        "score": 37.27257,
+        "score": 37.272015,
         "resource": {
           "primary": {
             "URL": "https://www.preprints.org/manuscript/202604.0339/v1"
@@ -793,7 +793,7 @@
           "date-time": "2026-07-17T01:44:05Z",
           "timestamp": 1784252645000
         },
-        "score": 37.121403,
+        "score": 37.122066,
         "resource": {
           "primary": {
             "URL": "https://inatgi.net/index.php/jaiaa/article/view/806"
@@ -973,7 +973,7 @@
           "date-time": "2026-09-12T16:12:33Z",
           "timestamp": 1789229553000
         },
-        "score": 36.50675,
+        "score": 36.50705,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10349437/v1"
@@ -1096,7 +1096,7 @@
           "date-time": "2026-05-06T16:40:10Z",
           "timestamp": 1778085610000
         },
-        "score": 36.462776,
+        "score": 36.463127,
         "resource": {
           "primary": {
             "URL": "https://isjem.com/download/speculative-retrieval-augmented-generation-for-cost-efficient-large-language-model-inference/"
@@ -1143,6 +1143,146 @@
             ]
           ]
         }
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              6
+            ]
+          ],
+          "date-time": "2026-07-06T04:15:50Z",
+          "timestamp": 1783311350461,
+          "version": "3.54.6"
+        },
+        "posted": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              3
+            ]
+          ]
+        },
+        "group-title": "JMIR Formative Research",
+        "reference-count": 1,
+        "publisher": "JMIR Publications Inc.",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "abstract": "<sec>\n                  <title>BACKGROUND</title>\n                  <p>There is evidence of rapid adoption of large language models (LLMs) in undergraduate medical education, with medical students using it to support their learning. This raises concerns particularly around the accuracy of LLM-generated information students are learning. Retrieval-augmented generation (RAG), which grounds a LLM in curated materials, may be a strategy to improve their accuracy.</p>\n                </sec>\n                <sec>\n                  <title>OBJECTIVE</title>\n                  <p>This study investigates if grounding LLM outputs in verifiable sources using RAG impacts trust and perceived usability amongst medical students.</p>\n                </sec>\n                <sec>\n                  <title>METHODS</title>\n                  <p>In a four-month qualitative study, second-year medical students at Bristol Medical School used a RAG-enabled LLM (NotebookLM) to help them learn course content. Following this, their perspectives were explored using a focus group and survey was. Qualitative data was analysed using thematic analysis and was supplemented by Likert scale data.</p>\n                </sec>\n                <sec>\n                  <title>RESULTS</title>\n                  <p>RAG-based LLMs were perceived as more reliable than standard LLM responses mainly due to the transparency of and control over information sources. The system functioned as an accessible, on-demand learning resource, improving efficiency and supporting self-directed study. Students continued to use strategies to cross check generated information. They demonstrated some awareness of ethical concerns, mostly around the environmental impact of LLMs and data privacy.</p>\n                </sec>\n                <sec>\n                  <title>CONCLUSIONS</title>\n                  <p>These findings suggest that RAG may enhance students’ trust in LLM outputs while maintaining their benefit as a flexible ‘study partner’. It highlights RAG as a strategy that educators can use to support students who use LLMs in the context of increasing. However, the impact of RAG-based LLMs over a longer period and on learning outcomes requires further evaluation.</p>\n                </sec>",
+        "DOI": "10.2196/preprints.106157",
+        "type": "posted-content",
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              6
+            ]
+          ],
+          "date-time": "2026-07-06T03:55:08Z",
+          "timestamp": 1783310108000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Does retrieval-augmented generation impact medical students’ perceptions of large language models? (Preprint)"
+        ],
+        "prefix": "10.2196",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0008-3513-3029",
+            "authenticated-orcid": false,
+            "given": "Rohin",
+            "family": "Athavale",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0000-8683-3107",
+            "authenticated-orcid": false,
+            "given": "Alexander",
+            "family": "Cresswell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0001-4033-6380",
+            "authenticated-orcid": false,
+            "given": "Alice",
+            "family": "Huffman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "1010",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.52783/jier.v6i1.4539"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              6
+            ]
+          ],
+          "date-time": "2026-07-06T03:55:08Z",
+          "timestamp": 1783310108000
+        },
+        "score": 35.503,
+        "resource": {
+          "primary": {
+            "URL": "http://preprints.jmir.org/preprint/106157"
+          }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              3
+            ]
+          ]
+        },
+        "references-count": 1,
+        "URL": "https://doi.org/10.2196/preprints.106157",
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              3
+            ]
+          ]
+        },
+        "subtype": "preprint"
       },
       {
         "indexed": {
@@ -1588,7 +1728,7 @@
           "date-time": "2026-07-02T10:56:27Z",
           "timestamp": 1782989787000
         },
-        "score": 35.504917,
+        "score": 35.502907,
         "resource": {
           "primary": {
             "URL": "https://www.mdpi.com/2075-5309/16/13/2637"
@@ -1637,146 +1777,6 @@
             ]
           ]
         }
-      },
-      {
-        "indexed": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              6
-            ]
-          ],
-          "date-time": "2026-07-06T04:15:50Z",
-          "timestamp": 1783311350461,
-          "version": "3.54.6"
-        },
-        "posted": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              3
-            ]
-          ]
-        },
-        "group-title": "JMIR Formative Research",
-        "reference-count": 1,
-        "publisher": "JMIR Publications Inc.",
-        "content-domain": {
-          "domain": [],
-          "crossmark-restriction": false
-        },
-        "abstract": "<sec>\n                  <title>BACKGROUND</title>\n                  <p>There is evidence of rapid adoption of large language models (LLMs) in undergraduate medical education, with medical students using it to support their learning. This raises concerns particularly around the accuracy of LLM-generated information students are learning. Retrieval-augmented generation (RAG), which grounds a LLM in curated materials, may be a strategy to improve their accuracy.</p>\n                </sec>\n                <sec>\n                  <title>OBJECTIVE</title>\n                  <p>This study investigates if grounding LLM outputs in verifiable sources using RAG impacts trust and perceived usability amongst medical students.</p>\n                </sec>\n                <sec>\n                  <title>METHODS</title>\n                  <p>In a four-month qualitative study, second-year medical students at Bristol Medical School used a RAG-enabled LLM (NotebookLM) to help them learn course content. Following this, their perspectives were explored using a focus group and survey was. Qualitative data was analysed using thematic analysis and was supplemented by Likert scale data.</p>\n                </sec>\n                <sec>\n                  <title>RESULTS</title>\n                  <p>RAG-based LLMs were perceived as more reliable than standard LLM responses mainly due to the transparency of and control over information sources. The system functioned as an accessible, on-demand learning resource, improving efficiency and supporting self-directed study. Students continued to use strategies to cross check generated information. They demonstrated some awareness of ethical concerns, mostly around the environmental impact of LLMs and data privacy.</p>\n                </sec>\n                <sec>\n                  <title>CONCLUSIONS</title>\n                  <p>These findings suggest that RAG may enhance students’ trust in LLM outputs while maintaining their benefit as a flexible ‘study partner’. It highlights RAG as a strategy that educators can use to support students who use LLMs in the context of increasing. However, the impact of RAG-based LLMs over a longer period and on learning outcomes requires further evaluation.</p>\n                </sec>",
-        "DOI": "10.2196/preprints.106157",
-        "type": "posted-content",
-        "created": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              6
-            ]
-          ],
-          "date-time": "2026-07-06T03:55:08Z",
-          "timestamp": 1783310108000
-        },
-        "source": "Crossref",
-        "is-referenced-by-count": 0,
-        "title": [
-          "Does retrieval-augmented generation impact medical students’ perceptions of large language models? (Preprint)"
-        ],
-        "prefix": "10.2196",
-        "author": [
-          {
-            "ORCID": "https://orcid.org/0009-0008-3513-3029",
-            "authenticated-orcid": false,
-            "given": "Rohin",
-            "family": "Athavale",
-            "sequence": "first",
-            "affiliation": [],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          },
-          {
-            "ORCID": "https://orcid.org/0009-0000-8683-3107",
-            "authenticated-orcid": false,
-            "given": "Alexander",
-            "family": "Cresswell",
-            "sequence": "additional",
-            "affiliation": [],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          },
-          {
-            "ORCID": "https://orcid.org/0009-0001-4033-6380",
-            "authenticated-orcid": false,
-            "given": "Alice",
-            "family": "Huffman",
-            "sequence": "additional",
-            "affiliation": [],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          }
-        ],
-        "member": "1010",
-        "reference": [
-          {
-            "key": "ref1",
-            "doi-asserted-by": "publisher",
-            "DOI": "10.52783/jier.v6i1.4539"
-          }
-        ],
-        "deposited": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              6
-            ]
-          ],
-          "date-time": "2026-07-06T03:55:08Z",
-          "timestamp": 1783310108000
-        },
-        "score": 35.50357,
-        "resource": {
-          "primary": {
-            "URL": "http://preprints.jmir.org/preprint/106157"
-          }
-        },
-        "issued": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              3
-            ]
-          ]
-        },
-        "references-count": 1,
-        "URL": "https://doi.org/10.2196/preprints.106157",
-        "published": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              3
-            ]
-          ]
-        },
-        "subtype": "preprint"
       },
       {
         "indexed": {
@@ -2144,7 +2144,7 @@
           "date-time": "2026-08-25T08:39:01Z",
           "timestamp": 1787647141000
         },
-        "score": 35.168663,
+        "score": 35.16979,
         "resource": {
           "primary": {
             "URL": "https://www.mdpi.com/2673-9585/6/3/22"
@@ -2319,7 +2319,7 @@
           "date-time": "2026-09-15T11:49:09Z",
           "timestamp": 1789472949000
         },
-        "score": 35.10512,
+        "score": 35.10594,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10489777/v1"
@@ -2490,7 +2490,7 @@
           "date-time": "2026-06-15T06:08:17Z",
           "timestamp": 1781503697000
         },
-        "score": 34.9857,
+        "score": 35.010605,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10012178/v1"
@@ -2718,7 +2718,7 @@
           "date-time": "2026-09-04T08:34:52Z",
           "timestamp": 1788510892000
         },
-        "score": 34.856567,
+        "score": 34.866276,
         "resource": {
           "primary": {
             "URL": "https://ujae.org.ua/en/intelligent-automation-of-economic-processes-based-on-retrieval-augmented-generation-and-large-language-models/"
@@ -3228,7 +3228,7 @@
           "date-time": "2026-08-05T14:18:01Z",
           "timestamp": 1785939481000
         },
-        "score": 34.759094,
+        "score": 34.759468,
         "resource": {
           "primary": {
             "URL": "https://onepetro.org/SJ/article/doi/10.2118/234689-PA/801839/SafeRAG-A-Large-Language-Model-Based-Multistage"
@@ -3371,7 +3371,7 @@
           "date-time": "2026-08-15T12:19:26Z",
           "timestamp": 1786796366000
         },
-        "score": 34.49526,
+        "score": 34.494713,
         "resource": {
           "primary": {
             "URL": "https://www.ijfmr.com/research-paper.php?id=85777"
@@ -3584,7 +3584,7 @@
           "date-time": "2026-07-04T20:37:12Z",
           "timestamp": 1783197432000
         },
-        "score": 34.44394,
+        "score": 34.443417,
         "resource": {
           "primary": {
             "URL": "https://www.ejournal.ummuba.ac.id/index.php/JUPTIK/article/view/4318"
@@ -3753,7 +3753,7 @@
           "date-time": "2026-07-10T14:51:37Z",
           "timestamp": 1783695097000
         },
-        "score": 34.44211,
+        "score": 34.441757,
         "resource": {
           "primary": {
             "URL": "https://hdl.handle.net/11681/50309"
@@ -4326,7 +4326,7 @@
           "date-time": "2026-07-13T14:44:27Z",
           "timestamp": 1783953867000
         },
-        "score": 34.393948,
+        "score": 34.393955,
         "resource": {
           "primary": {
             "URL": "https://link.springer.com/10.1007/s10278-026-02086-9"
@@ -4583,7 +4583,7 @@
           "date-time": "2026-08-26T06:36:23Z",
           "timestamp": 1787726183000
         },
-        "score": 34.16337,
+        "score": 34.15942,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10423755/v1"
@@ -4698,7 +4698,7 @@
           "date-time": "2026-08-11T12:20:32Z",
           "timestamp": 1786450832000
         },
-        "score": 34.07889,
+        "score": 34.077892,
         "resource": {
           "primary": {
             "URL": "https://ajdsa-journal.org/index.php/ajdsa/article/view/80"
@@ -4959,7 +4959,7 @@
           "date-time": "2026-05-09T02:39:59Z",
           "timestamp": 1778294399000
         },
-        "score": 34.068844,
+        "score": 34.0693,
         "resource": {
           "primary": {
             "URL": "https://academic.oup.com/sleep/article/49/Supplement_1/A153/8673444"
@@ -5178,7 +5178,7 @@
           "date-time": "2026-09-02T06:41:33Z",
           "timestamp": 1788331293000
         },
-        "score": 34.026146,
+        "score": 34.025883,
         "resource": {
           "primary": {
             "URL": "https://journal.maranatha.edu/index.php/jutisi/article/view/13099"
@@ -5372,7 +5372,7 @@
           "date-time": "2026-08-11T06:13:06Z",
           "timestamp": 1786428786000
         },
-        "score": 33.880085,
+        "score": 33.87938,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10178277/v1"
@@ -5526,7 +5526,7 @@
           "date-time": "2026-08-27T00:42:04Z",
           "timestamp": 1787791324000
         },
-        "score": 33.840454,
+        "score": 33.840904,
         "resource": {
           "primary": {
             "URL": "https://www.preprints.org/manuscript/202608.1849/v1"

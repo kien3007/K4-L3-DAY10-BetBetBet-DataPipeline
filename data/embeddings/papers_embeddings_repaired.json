@@ -2,7 +2,7 @@
   "backend": "chroma",
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "persist_path": "C:\\Users\\kienn\\AI20K\\K4A-DAY10-GroupXX-BetBetBet\\data\\chroma",
-  "collection_name": "papers-baseline",
+  "collection_name": "papers-repaired",
   "documents": [
     {
       "record_id": "10.21203/rs.3.rs-10489777/v1::0",
