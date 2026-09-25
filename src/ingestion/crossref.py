@@ -196,31 +196,43 @@ def fetch_source_records(settings: Settings) -> list[PaperRecord]:
     adapter = HTTPAdapter(max_retries=retry_strategy)
     url = getattr(settings, "source_api_url", CROSSREF_API_URL)
 
-    with requests.Session() as session:
-        session.mount("https://", adapter)
-        session.mount("http://", adapter)
+    try:
+        with requests.Session() as session:
+            session.mount("https://", adapter)
+            session.mount("http://", adapter)
 
-        response = session.get(url, params=params, headers=headers, timeout=30)
-        response.raise_for_status()
-        payload = response.json()
+            response = session.get(url, params=params, headers=headers, timeout=30)
+            response.raise_for_status()
+            payload = response.json()
 
-    # Lưu raw response
-    raw_api_path = Path(settings.paths.raw_api_response)
-    raw_api_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(raw_api_path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+        # Lưu raw response
+        raw_api_path = Path(settings.paths.raw_api_response)
+        raw_api_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(raw_api_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    # Parse payload
-    records = parse_crossref_payload(payload)
+        # Parse payload
+        records = parse_crossref_payload(payload)
 
-    # Lưu snapshot records
-    raw_records_path = Path(settings.paths.raw_records_json)
-    raw_records_path.parent.mkdir(parents=True, exist_ok=True)
-    records_data = [_record_to_dict(rec) for rec in records]
-    with open(raw_records_path, "w", encoding="utf-8") as f:
-        json.dump(records_data, f, ensure_ascii=False, indent=2)
+        # Lưu snapshot records
+        raw_records_path = Path(settings.paths.raw_records_json)
+        raw_records_path.parent.mkdir(parents=True, exist_ok=True)
+        records_data = [_record_to_dict(rec) for rec in records]
+        with open(raw_records_path, "w", encoding="utf-8") as f:
+            json.dump(records_data, f, ensure_ascii=False, indent=2)
 
-    return records
+        return records
+    except Exception as exc:
+        print(f"Warning: Crossref API call failed ({exc}). Triggering offline rescue mode...")
+        raw_records_path = Path(settings.paths.raw_records_json)
+        if raw_records_path.exists():
+            return load_raw_records(raw_records_path)
+        raw_api_path = Path(settings.paths.raw_api_response)
+        if raw_api_path.exists():
+            with open(raw_api_path, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+            return parse_crossref_payload(payload)
+        raise exc
 
 
 def load_raw_records(path: Path) -> list[PaperRecord]:
